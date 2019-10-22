@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:30:54 by alagache          #+#    #+#             */
-/*   Updated: 2019/05/23 14:25:02 by alagache         ###   ########.fr       */
+/*   Updated: 2019/10/22 11:25:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
+char			*ft_itoa_base(int value, int base);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
