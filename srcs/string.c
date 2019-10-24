@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:31:58 by alagache          #+#    #+#             */
-/*   Updated: 2019/08/13 11:48:23 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:36:24 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int			null_string(t_conv_id *s_ptr)
 	else if (s_ptr->precision != -1)
 		ft_memcpy(s_ptr->output + (len - s_ptr->precision), "(null)",
 			s_ptr->precision);
-	write(1, s_ptr->output, len);
+	write(s_ptr->fd, s_ptr->output, len);
 	free(s_ptr->output);
 	return (len);
 }
@@ -87,7 +87,7 @@ int			ft_conv_string(t_conv_id *s_ptr, va_list *arg_ptr)
 		minus_string(s_ptr, len, str);
 	else
 		no_flag_string(s_ptr, len, str);
-	write(1, s_ptr->output, len);
+	write(s_ptr->fd, s_ptr->output, len);
 	free(s_ptr->output);
 	return (len);
 }

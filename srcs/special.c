@@ -6,7 +6,7 @@
 /*   By: plagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 12:27:36 by plagache          #+#    #+#             */
-/*   Updated: 2019/08/13 11:47:43 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:42:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_longd_special(t_conv_id *s_ptr, t_s_e_m *dble)
 			minus_special_value(dble, s_ptr);
 		else
 			special_value(dble, s_ptr, len);
-		write(1, s_ptr->output, len);
+		write(s_ptr->fd, s_ptr->output, len);
 		free(s_ptr->output);
 		return (len);
 	}
@@ -86,7 +86,7 @@ int		ft_double_special(t_conv_id *s_ptr, t_s_e_m *dble)
 			minus_special_value(dble, s_ptr);
 		else
 			special_value(dble, s_ptr, len);
-		write(1, s_ptr->output, len);
+		write(s_ptr->fd, s_ptr->output, len);
 		free(s_ptr->output);
 		return (len);
 	}

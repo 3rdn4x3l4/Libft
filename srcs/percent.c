@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 15:31:03 by alagache          #+#    #+#             */
-/*   Updated: 2019/08/13 11:42:37 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:42:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_conv_percent(t_conv_id *s_ptr, va_list *arg_ptr)
 		minus_flag_percent(s_ptr, len);
 	else
 		no_flag_percent(s_ptr, len);
-	write(1, s_ptr->output, len);
+	write(s_ptr->fd, s_ptr->output, len);
 	free(s_ptr->output);
 	return (len);
 	len = va_arg(*arg_ptr, int);

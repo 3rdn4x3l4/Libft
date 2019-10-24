@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:31:38 by alagache          #+#    #+#             */
-/*   Updated: 2019/08/13 11:42:51 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:42:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ int		ftoa_ldouble(t_s_e_m *dble, t_conv_id *s_ptr)
 		zero_flag_ldouble(&dbl_arr, s_ptr, dble, len);
 	else
 		no_flag_ldouble(&dbl_arr, s_ptr, dble, len);
-	write(1, s_ptr->output, len);
+	write(s_ptr->fd, s_ptr->output, len);
 	free(s_ptr->output);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 11:45:22 by alagache          #+#    #+#             */
-/*   Updated: 2019/10/22 12:00:34 by alagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:52:26 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char	*ft_itoa_base(int value, int base)
 		str[i] = (n % base >= 10) ? n % base + 55 : n % base + 48;
 		n /= base;
 	}
-	(i == 0) ? str[i] = '-': 0;
+	(i == 0) ? str[i] = '-' : 0;
 	return (str);
 }

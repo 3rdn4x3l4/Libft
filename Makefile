@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2019/10/22 11:32:56 by alagache         ###   ########.fr        #
+#    Updated: 2019/10/24 16:28:20 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,6 +80,7 @@ SRCS= ft_memset.c\
 	  get_next_line.c\
 
 SRCS += ft_printf.c\
+	  ft_dprintf.c\
 	  pwidth.c\
 	  pflags.c\
 	  pwidth.c\

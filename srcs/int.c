@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 12:00:02 by alagache          #+#    #+#             */
-/*   Updated: 2019/08/08 14:01:35 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:42:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int		ft_conv_int(t_conv_id *s_ptr, va_list *arg_ptr)
 		zero_no_prec_int(s_ptr, len, value);
 	else
 		no_flag_int(s_ptr, len, value);
-	write(1, s_ptr->output, len);
+	write(s_ptr->fd, s_ptr->output, len);
 	free(s_ptr->output);
 	return (len);
 }

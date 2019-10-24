@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 11:31:32 by alagache          #+#    #+#             */
-/*   Updated: 2019/08/08 14:46:10 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:42:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int		ft_conv_hexa_upper(t_conv_id *s_ptr, va_list *arg_ptr)
 		zero_flag_hexa_upper(s_ptr, len, value);
 	else
 		no_flag_hexa_upper(s_ptr, len, value);
-	write(1, s_ptr->output, len);
+	write(s_ptr->fd, s_ptr->output, len);
 	free(s_ptr->output);
 	return (len);
 }

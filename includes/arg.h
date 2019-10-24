@@ -6,7 +6,7 @@
 /*   By: plagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 18:21:25 by plagache          #+#    #+#             */
-/*   Updated: 2019/08/13 11:34:12 by plagache         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:50:38 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct	s_conv_info
 	int		precision;
 	int		width;
 	char	flags;
+	int		fd;
 }				t_conv_id;
 
 typedef struct	s_double
@@ -60,6 +61,15 @@ typedef struct	s_point
 	int	read;
 	int	written;
 }				t_point;
+
+/*
+** Core functions
+*/
+int				parsing(char *ptr, int end, t_conv_id *struct_ptr);
+int				check_conversion(const char *str);
+t_point			conv_path(int	fd, const char *fmt, va_list *arg_ptr);
+int				loop(int	fd, const char *fmt, va_list *arg_ptr,
+				int written);
 
 /*
 ** conversion functions
