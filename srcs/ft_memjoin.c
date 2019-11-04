@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/25 09:00:08 by alagache          #+#    #+#             */
-/*   Updated: 2019/11/04 16:56:42 by alagache         ###   ########.fr       */
+/*   Created: 2019/11/04 13:21:23 by alagache          #+#    #+#             */
+/*   Updated: 2019/11/04 17:47:59 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
+#include <stdio.h>
 
-# define BUFF_SIZE 2
-
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft.h"
-
-typedef struct	s_data
+void	*ft_memjoin(void *s1, size_t n1, void *s2, size_t n2)
 {
-	char	*read;
-	int		fd;
-	int		len;
-}				t_data;
+	void	*s;
 
-int				get_next_line(const int fd, char **line);
-int				mem_next_line(const int fd, char **line);
-
-#endif
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	s = ft_memalloc(n1 + n2);
+	ft_memcpy(s, s1, n1);
+	ft_memcpy(s + n1, s2, n2);
+	printf("|%s|\n", (char*)s);
+	return (s);
+}

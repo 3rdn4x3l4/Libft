@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2019/10/24 16:28:20 by alagache         ###   ########.fr        #
+#    Updated: 2019/11/04 16:30:01 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRCS= ft_memset.c\
 	  ft_memmove.c\
 	  ft_memchr.c\
 	  ft_memcmp.c\
+	  ft_memalloc.c\
+	  ft_memjoin.c\
+	  ft_memdel.c\
 	  ft_strlen.c\
 	  ft_strdup.c\
 	  ft_strcpy.c\
@@ -40,8 +43,6 @@ SRCS= ft_memset.c\
 	  ft_isalnum.c\
 	  ft_tolower.c\
 	  ft_toupper.c\
-	  ft_memalloc.c\
-	  ft_memdel.c\
 	  ft_strnew.c\
 	  ft_strdel.c\
 	  ft_strclr.c\
@@ -78,6 +79,7 @@ SRCS= ft_memset.c\
 	  ft_2lstdelnext.c\
 	  ft_2lstnew.c\
 	  get_next_line.c\
+	  mem_next_line.c\
 
 SRCS += ft_printf.c\
 	  ft_dprintf.c\
