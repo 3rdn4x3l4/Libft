@@ -1,177 +1,241 @@
-add_strings	srcs/float_tools.c	/^void	add_strings(char *dst, char *src, int len)$/
-apply_d_rounding	srcs/float_tools.c	/^void	apply_d_rounding(t_d_arrs *a_ptr, int prec)$/
-apply_ld_rounding	srcs/float_tools.c	/^void	apply_ld_rounding(t_ld_arrs *a_ptr, int prec)/
-calc_len_address	srcs/address_tools.c	/^int		calc_len_address(t_conv_id *s_ptr, unsigned l/
-calc_len_double	srcs/double.c	/^int		calc_len_double(t_d_arrs *a_ptr, t_conv_id *s/
-calc_len_hexa	srcs/hexa_tools.c	/^int	calc_len_hexa(t_conv_id *s_ptr, unsigned long /
-calc_len_int	srcs/int_tools.c	/^int		calc_len_int(t_conv_id *s_ptr, long long int /
-calc_len_ldouble	srcs/ldouble.c	/^int		calc_len_ldouble(t_ld_arrs *a_ptr, t_conv_id /
-calc_len_octal	srcs/octal_tools.c	/^int	calc_len_octal(t_conv_id *s_ptr, unsigned long/
-calc_len_percent	srcs/percent.c	/^int		calc_len_percent(t_conv_id *s_ptr)$/
-calc_len_string	srcs/string.c	/^int			calc_len_string(t_conv_id *s_ptr, char *str)/
-calc_len_unsigned	srcs/unsigned_tools.c	/^int		calc_len_unsigned(t_conv_id *s_ptr, unsigned /
-check_conversion	srcs/ft_dprintf.c	/^int			check_conversion(const char *str)$/
-check_int_struct	srcs/int_tools.c	/^int		check_int_struct(t_conv_id *ptr)$/
-check_octal_struct	srcs/octal_tools.c	/^int	check_octal_struct(t_conv_id *s_ptr)$/
-check_special_value	srcs/special.c	/^int		check_special_value(t_s_e_m *dble_ptr)$/
-check_unsigned_struct	srcs/unsigned_tools.c	/^int		check_unsigned_struct(t_conv_id *ptr)$/
-conv_path	srcs/ft_dprintf.c	/^t_point		conv_path(int	fd, const char *fmt, va_lis/
-divide_str_by_two	srcs/float_tools.c	/^void	divide_str_by_two(char *str, int len)$/
-double_exponant	srcs/double_tools.c	/^void	double_exponant(t_s_e_m *dble_ptr, t_d_arrs */
-double_mantissa	srcs/double_tools.c	/^void	double_mantissa(t_s_e_m *dble_ptr, t_d_arrs */
-double_rounding	srcs/double_tools.c	/^void	double_rounding(t_d_arrs *a_ptr, t_conv_id *s/
-fill_arr	srcs/func_selector.c	/^void			fill_arr(t_conv_func *arr)$/
-fill_d_tabs	srcs/double_tools.c	/^void	fill_d_tabs(t_d_arrs *a_ptr, t_s_e_m *dble_pt/
-fill_ld_tabs	srcs/ldouble_tools.c	/^void	fill_ld_tabs(t_ld_arrs *a_ptr, t_s_e_m *dble_/
-fill_line	srcs/get_next_line.c	/^char	*fill_line(t_data *current, char **line, int /
-flag	srcs/pflags.c	/^int		flag(char *ptr, int end, t_conv_id *struct_pt/
-flags_in_struct	srcs/pflags.c	/^void	flags_in_struct(char c, t_conv_id *struct_ptr/
-free_exit	srcs/get_next_line.c	/^void	free_exit(t_list **head, t_data *current)$/
-ft_2lstadd_first	srcs/ft_2lstadd_first.c	/^void	ft_2lstadd_first(t_2list **alst, t_2list *new/
-ft_2lstadd_last	srcs/ft_2lstadd_last.c	/^void	ft_2lstadd_last(t_2list **alst, t_2list *new)/
-ft_2lstdel	srcs/ft_2lstdel.c	/^void	ft_2lstdel(t_2list **alst, void (*del)(void */
-ft_2lstdelnext	srcs/ft_2lstdelnext.c	/^void	ft_2lstdelnext(t_2list **alst, void (*del)(vo/
-ft_2lstdelone	srcs/ft_2lstdelone.c	/^void	ft_2lstdelone(t_2list **alst, void (*del)(voi/
-ft_2lstnew	srcs/ft_2lstnew.c	/^t_2list	*ft_2lstnew(void const *cntent, size_t cnt/
-ft_atoi	srcs/ft_atoi.c	/^int	ft_atoi(const char *str)$/
-ft_bzero	srcs/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/
-ft_conv_address	srcs/address.c	/^int		ft_conv_address(t_conv_id *s_ptr, va_list *ar/
-ft_conv_char	srcs/char.c	/^int	ft_conv_char(t_conv_id *s_ptr, va_list *arg_pt/
-ft_conv_double	srcs/float.c	/^int		ft_conv_double(t_conv_id *s_ptr, va_list *arg/
-ft_conv_float	srcs/float.c	/^int		ft_conv_float(t_conv_id *s_ptr, va_list *arg_/
-ft_conv_hexa	srcs/hexa.c	/^int		ft_conv_hexa(t_conv_id *s_ptr, va_list *arg_p/
-ft_conv_hexa_upper	srcs/hexa_upper.c	/^int		ft_conv_hexa_upper(t_conv_id *s_ptr, va_list /
-ft_conv_int	srcs/int.c	/^int		ft_conv_int(t_conv_id *s_ptr, va_list *arg_pt/
-ft_conv_ldouble	srcs/float.c	/^int		ft_conv_ldouble(t_conv_id *s_ptr, va_list *ar/
-ft_conv_octal	srcs/octal.c	/^int		ft_conv_octal(t_conv_id *s_ptr, va_list *arg_/
-ft_conv_percent	srcs/percent.c	/^int		ft_conv_percent(t_conv_id *s_ptr, va_list *ar/
-ft_conv_string	srcs/string.c	/^int			ft_conv_string(t_conv_id *s_ptr, va_list *ar/
-ft_conv_unsigned	srcs/unsigned.c	/^int		ft_conv_unsigned(t_conv_id *s_ptr, va_list *a/
-ft_count_words	srcs/ft_strsplit.c	/^static int	ft_count_words(char const *s, char c)$/
-ft_double_special	srcs/special.c	/^int		ft_double_special(t_conv_id *s_ptr, t_s_e_m */
-ft_dprintf	srcs/ft_dprintf.c	/^int			ft_dprintf(int	fd, const char *format, ...)$/
-ft_isalnum	srcs/ft_isalnum.c	/^int	ft_isalnum(int c)$/
-ft_isalpha	srcs/ft_isalpha.c	/^int	ft_isalpha(int c)$/
-ft_isascii	srcs/ft_isascii.c	/^int	ft_isascii(int c)$/
-ft_isdigit	srcs/ft_isdigit.c	/^int	ft_isdigit(int c)$/
-ft_isprint	srcs/ft_isprint.c	/^int	ft_isprint(int c)$/
-ft_itoa	srcs/ft_itoa.c	/^char		*ft_itoa(int n)$/
-ft_itoa_base	srcs/ft_itoa_base.c	/^char	*ft_itoa_base(int value, int base)$/
-ft_longd_special	srcs/special.c	/^int		ft_longd_special(t_conv_id *s_ptr, t_s_e_m *d/
-ft_lstadd	srcs/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/
-ft_lstdel	srcs/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void*, s/
-ft_lstdelone	srcs/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void /
-ft_lstiter	srcs/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *ele/
-ft_lstmap	srcs/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list/
-ft_lstnew	srcs/ft_lstnew.c	/^t_list	*ft_lstnew(void const *content, size_t cont/
-ft_memalloc	srcs/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/
-ft_memccpy	srcs/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c/
-ft_memchr	srcs/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/
-ft_memcmp	srcs/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size/
-ft_memcpy	srcs/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t/
-ft_memdel	srcs/ft_memdel.c	/^void	ft_memdel(void **ap)$/
-ft_memmove	srcs/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_/
-ft_memset	srcs/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/
-ft_need_trim	srcs/ft_strtrim.c	/^static	int		ft_need_trim(char const *s, int len)$/
-ft_printf	srcs/ft_printf.c	/^int			ft_printf(const char *format, ...)$/
-ft_putchar	srcs/ft_putchar.c	/^void	ft_putchar(char c)$/
-ft_putchar_fd	srcs/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/
-ft_putendl	srcs/ft_putendl.c	/^void	ft_putendl(char const *s)$/
-ft_putendl_fd	srcs/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/
-ft_putnbr	srcs/ft_putnbr.c	/^void	ft_putnbr(int n)$/
-ft_putnbr_fd	srcs/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/
-ft_putstr	srcs/ft_putstr.c	/^void	ft_putstr(char const *s)$/
-ft_putstr_fd	srcs/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/
-ft_strcat	srcs/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/
-ft_strchr	srcs/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/
-ft_strclr	srcs/ft_strclr.c	/^void	ft_strclr(char *s)$/
-ft_strcmp	srcs/ft_strcmp.c	/^int	ft_strcmp(const char *s1, const char *s2)$/
-ft_strcpy	srcs/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/
-ft_strdel	srcs/ft_strdel.c	/^void	ft_strdel(char **as)$/
-ft_strdup	srcs/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/
-ft_strequ	srcs/ft_strequ.c	/^int	ft_strequ(char const *s1, char const *s2)$/
-ft_striter	srcs/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/
-ft_striteri	srcs/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, /
-ft_strjoin	srcs/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/
-ft_strlcat	srcs/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size/
-ft_strlen	srcs/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/
-ft_strmap	srcs/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/
-ft_strmapi	srcs/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned/
-ft_strncat	srcs/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t /
-ft_strncmp	srcs/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, siz/
-ft_strncpy	srcs/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_/
-ft_strnequ	srcs/ft_strnequ.c	/^int	ft_strnequ(char const *s1, char const *s2, siz/
-ft_strnew	srcs/ft_strnew.c	/^char	*ft_strnew(size_t size)$/
-ft_strnstr	srcs/ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char /
-ft_strrchr	srcs/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/
-ft_strsplit	srcs/ft_strsplit.c	/^char		**ft_strsplit(char const *s, char c)$/
-ft_strstr	srcs/ft_strstr.c	/^char	*ft_strstr(const char *haystack, const char */
-ft_strsub	srcs/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start,/
-ft_strtrim	srcs/ft_strtrim.c	/^char			*ft_strtrim(char const *s)$/
-ft_tolower	srcs/ft_tolower.c	/^int	ft_tolower(int c)$/
-ft_toupper	srcs/ft_toupper.c	/^int	ft_toupper(int c)$/
-ft_wordlen	srcs/ft_strsplit.c	/^static int	ft_wordlen(char const *s, char c)$/
-ftoa_double	srcs/double.c	/^int		ftoa_double(t_s_e_m *dble, t_conv_id *s_ptr)$/
-ftoa_ldouble	srcs/ldouble.c	/^int		ftoa_ldouble(t_s_e_m *dble, t_conv_id *s_ptr)/
-get_address_value	srcs/address_tools.c	/^void	get_address_value(unsigned long *val_ptr, va_/
-get_double_value	srcs/double_tools.c	/^void	get_double_value(va_list *arg_ptr, t_s_e_m *d/
-get_func	srcs/func_selector.c	/^t_conv_func		get_func(char c)$/
-get_int_value	srcs/int_tools.c	/^void	get_int_value(long long int *val_ptr, va_list/
-get_ldouble_value	srcs/ldouble_tools.c	/^void	get_ldouble_value(va_list *arg_ptr, t_s_e_m */
-get_next_line	srcs/get_next_line.c	/^int		get_next_line(int fd, char **line)$/
-get_unsigned_value	srcs/unsigned_tools.c	/^void	get_unsigned_value(unsigned long long *val_pt/
-init	srcs/get_next_line.c	/^t_data	*init(int fd, t_list **alst)$/
-int_len	srcs/int_tools.c	/^int		int_len(long long int val)$/
-ldouble_exponant	srcs/ldouble_tools.c	/^void	ldouble_exponant(t_s_e_m *dble_ptr, t_ld_arrs/
-ldouble_mantissa	srcs/ldouble_tools.c	/^void	ldouble_mantissa(unsigned long long mant, t_l/
-ldouble_rounding	srcs/ldouble_tools.c	/^void	ldouble_rounding(t_ld_arrs *a_ptr, t_conv_id /
-len_modifier	srcs/plenmodifier.c	/^int	len_modifier(char *ptr, int end, t_conv_id *st/
-len_modifier_in_struct	srcs/plenmodifier.c	/^int	len_modifier_in_struct(char *ptr, int len, t_c/
-longd_special_value	srcs/special.c	/^int		longd_special_value(t_s_e_m *dble_ptr)$/
-loop_conv	srcs/ft_dprintf.c	/^int			loop_conv(int	fd, const char *fmt, va_list */
-minus_flag_address	srcs/address.c	/^void	minus_flag_address(t_conv_id *s_ptr, int len,/
-minus_flag_double	srcs/double.c	/^void	minus_flag_double(t_d_arrs *a_ptr, t_conv_id /
-minus_flag_hexa	srcs/hexa.c	/^void	minus_flag_hexa(t_conv_id *s_ptr, int len, un/
-minus_flag_hexa_upper	srcs/hexa_upper.c	/^void	minus_flag_hexa_upper(t_conv_id *s_ptr, int l/
-minus_flag_ldouble	srcs/ldouble.c	/^void	minus_flag_ldouble(t_ld_arrs *a_ptr, t_conv_i/
-minus_flag_percent	srcs/percent.c	/^void	minus_flag_percent(t_conv_id *s_ptr, int len)/
-minus_flag_unsigned	srcs/unsigned.c	/^void	minus_flag_unsigned(t_conv_id *s_ptr, int len/
-minus_int	srcs/int.c	/^void	minus_int(t_conv_id *s_ptr, int len, long lon/
-minus_octal	srcs/octal.c	/^void	minus_octal(t_conv_id *s_ptr, int len, unsign/
-minus_special_value	srcs/special_tools.c	/^void	minus_special_value(t_s_e_m *dble_ptr, t_conv/
-minus_string	srcs/string.c	/^void		minus_string(t_conv_id *s_ptr, int len, char/
-multiply_str_by_two	srcs/float_tools.c	/^void	multiply_str_by_two(char *str, int len)$/
-no_flag_address	srcs/address.c	/^void	no_flag_address(t_conv_id *s_ptr, int len, un/
-no_flag_double	srcs/double.c	/^void	no_flag_double(t_d_arrs *a_ptr, t_conv_id *s_/
-no_flag_hexa	srcs/hexa.c	/^void	no_flag_hexa(t_conv_id *s_ptr, int len, unsig/
-no_flag_hexa_upper	srcs/hexa_upper.c	/^void	no_flag_hexa_upper(t_conv_id *s_ptr, int len,/
-no_flag_int	srcs/int.c	/^void	no_flag_int(t_conv_id *s_ptr, int len, long l/
-no_flag_ldouble	srcs/ldouble.c	/^void	no_flag_ldouble(t_ld_arrs *a_ptr, t_conv_id */
-no_flag_octal	srcs/octal.c	/^void	no_flag_octal(t_conv_id *s_ptr, int len, unsi/
-no_flag_percent	srcs/percent.c	/^void	no_flag_percent(t_conv_id *s_ptr, int len)$/
-no_flag_string	srcs/string.c	/^void		no_flag_string(t_conv_id *s_ptr, int len, ch/
-no_flag_unsigned	srcs/unsigned.c	/^void	no_flag_unsigned(t_conv_id *s_ptr, int len, u/
-null_ptr	srcs/address.c	/^int		null_ptr(t_conv_id *s_ptr, int len)$/
-null_ptr_zero	srcs/address.c	/^int		null_ptr_zero(t_conv_id *s_ptr, int len)$/
-null_string	srcs/string.c	/^int			null_string(t_conv_id *s_ptr)$/
-parsing	srcs/ft_dprintf.c	/^int			parsing(char *ptr, int end, t_conv_id *struc/
-precision	srcs/pprecision.c	/^int		precision(char *ptr, int end, t_conv_id *stru/
-precision_in_struct	srcs/pprecision.c	/^void	precision_in_struct(char c, t_conv_id *struct/
-read_until	srcs/get_next_line.c	/^int		read_until(t_data *current)$/
-special_value	srcs/special_tools.c	/^void	special_value(t_s_e_m *dble_ptr, t_conv_id *s/
-str_fill_char	srcs/global_tools.c	/^int	str_fill_char(char *str, char c, int len)$/
-unsigned_len_base	srcs/global_tools.c	/^int	unsigned_len_base(unsigned long long val, unsi/
-width	srcs/pwidth.c	/^int		width(char *ptr, int end, t_conv_id *struct_p/
-width_in_struct	srcs/pwidth.c	/^void	width_in_struct(char c, t_conv_id *struct_ptr/
-zero_flag_double	srcs/double.c	/^void	zero_flag_double(t_d_arrs *a_ptr, t_conv_id */
-zero_flag_hexa	srcs/hexa.c	/^void	zero_flag_hexa(t_conv_id *s_ptr, int len, uns/
-zero_flag_hexa_upper	srcs/hexa_upper.c	/^void	zero_flag_hexa_upper(t_conv_id *s_ptr, int le/
-zero_flag_ldouble	srcs/ldouble.c	/^void	zero_flag_ldouble(t_ld_arrs *a_ptr, t_conv_id/
-zero_flag_unsigned	srcs/unsigned.c	/^void	zero_flag_unsigned(t_conv_id *s_ptr, int len,/
-zero_no_prec_int	srcs/int.c	/^void	zero_no_prec_int(t_conv_id *s_ptr, int len, l/
-zero_no_prec_octal	srcs/octal.c	/^void	zero_no_prec_octal(t_conv_id *s_ptr, int len,/
-zero_zero_hexa	srcs/hexa.c	/^void	zero_zero_hexa(t_conv_id *s_ptr, int len)$/
-zero_zero_hexa_upper	srcs/hexa_upper.c	/^void	zero_zero_hexa_upper(t_conv_id *s_ptr, int le/
-zero_zero_int	srcs/int.c	/^void	zero_zero_int(t_conv_id *s_ptr, int len)$/
-zero_zero_octal	srcs/octal.c	/^void	zero_zero_octal(t_conv_id *s_ptr, int len)$/
-zero_zero_unsigned	srcs/unsigned.c	/^void	zero_zero_unsigned(t_conv_id *s_ptr, int len)/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARG_H	includes/arg.h	14;"	d
+BUFF_SIZE	includes/get_next_line.h	16;"	d
+FALSE	includes/libft.h	20;"	d
+FLAGSMAX	includes/arg.h	16;"	d
+FT_PRINTF_H	includes/ft_printf.h	14;"	d
+GET_NEXT_LINE_H	includes/get_next_line.h	14;"	d
+LIBFT_H	includes/libft.h	14;"	d
+TRUE	includes/libft.h	19;"	d
+add_strings	srcs/float_tools.c	/^void	add_strings(char *dst, char *src, int len)$/;"	f
+apply_d_rounding	srcs/float_tools.c	/^void	apply_d_rounding(t_d_arrs *a_ptr, int prec)$/;"	f
+apply_ld_rounding	srcs/float_tools.c	/^void	apply_ld_rounding(t_ld_arrs *a_ptr, int prec)$/;"	f
+buffer	includes/get_next_line.h	/^	char		*buffer;$/;"	m	struct:s_data
+calc_len_address	srcs/address_tools.c	/^int		calc_len_address(t_conv_id *s_ptr, unsigned long value)$/;"	f
+calc_len_double	srcs/double.c	/^int		calc_len_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr)$/;"	f
+calc_len_hexa	srcs/hexa_tools.c	/^int	calc_len_hexa(t_conv_id *s_ptr, unsigned long long value)$/;"	f
+calc_len_int	srcs/int_tools.c	/^int		calc_len_int(t_conv_id *s_ptr, long long int value)$/;"	f
+calc_len_ldouble	srcs/ldouble.c	/^int		calc_len_ldouble(t_ld_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr)$/;"	f
+calc_len_octal	srcs/octal_tools.c	/^int	calc_len_octal(t_conv_id *s_ptr, unsigned long long value)$/;"	f
+calc_len_percent	srcs/percent.c	/^int		calc_len_percent(t_conv_id *s_ptr)$/;"	f
+calc_len_string	srcs/string.c	/^int			calc_len_string(t_conv_id *s_ptr, char *str)$/;"	f
+calc_len_unsigned	srcs/unsigned_tools.c	/^int		calc_len_unsigned(t_conv_id *s_ptr, unsigned long long value)$/;"	f
+check_conversion	srcs/ft_dprintf.c	/^int			check_conversion(const char *str)$/;"	f
+check_int_struct	srcs/int_tools.c	/^int		check_int_struct(t_conv_id *ptr)$/;"	f
+check_octal_struct	srcs/octal_tools.c	/^int	check_octal_struct(t_conv_id *s_ptr)$/;"	f
+check_special_value	srcs/special.c	/^int		check_special_value(t_s_e_m *dble_ptr)$/;"	f
+check_unsigned_struct	srcs/unsigned_tools.c	/^int		check_unsigned_struct(t_conv_id *ptr)$/;"	f
+cntent	includes/libft.h	/^	void						*cntent;$/;"	m	struct:s_double_linked_list
+content	includes/libft.h	/^	void			*content;$/;"	m	struct:s_list
+content_size	includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_list
+conv	includes/arg.h	/^	char	conv;$/;"	m	struct:s_conv_info
+conv_path	srcs/ft_dprintf.c	/^t_point		conv_path(int fd, const char *fmt, va_list *arg_ptr)$/;"	f
+divide_str_by_two	srcs/float_tools.c	/^void	divide_str_by_two(char *str, int len)$/;"	f
+double_exponant	srcs/double_tools.c	/^void	double_exponant(t_s_e_m *dble_ptr, t_d_arrs *a_ptr)$/;"	f
+double_mantissa	srcs/double_tools.c	/^void	double_mantissa(t_s_e_m *dble_ptr, t_d_arrs *a_ptr)$/;"	f
+double_rounding	srcs/double_tools.c	/^void	double_rounding(t_d_arrs *a_ptr, t_conv_id *s_ptr)$/;"	f
+e	includes/arg.h	/^	unsigned short		e;$/;"	m	struct:s_double
+fd	includes/arg.h	/^	int		fd;$/;"	m	struct:s_conv_info
+fd	includes/get_next_line.h	/^	int			fd;$/;"	m	struct:s_data
+fill_arr	srcs/func_selector.c	/^void			fill_arr(t_conv_func *arr)$/;"	f
+fill_d_tabs	srcs/double_tools.c	/^void	fill_d_tabs(t_d_arrs *a_ptr, t_s_e_m *dble_ptr, t_conv_id *s_ptr)$/;"	f
+fill_ld_tabs	srcs/ldouble_tools.c	/^void	fill_ld_tabs(t_ld_arrs *a_ptr, t_s_e_m *dble_ptr, t_conv_id *s_ptr)$/;"	f
+fill_line	srcs/get_next_line.c	/^char	*fill_line(t_data *current, char **line, int old_chars)$/;"	f
+flag	srcs/pflags.c	/^int		flag(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
+flags	includes/arg.h	/^	char	flags;$/;"	m	struct:s_conv_info
+flags_in_struct	srcs/pflags.c	/^void	flags_in_struct(char c, t_conv_id *struct_ptr)$/;"	f
+free_exit	srcs/get_next_line.c	/^void	free_exit(t_list **head, t_data *current)$/;"	f
+ft_2lstadd_first	srcs/ft_2lstadd_first.c	/^void	ft_2lstadd_first(t_2list **alst, t_2list *new)$/;"	f
+ft_2lstadd_last	srcs/ft_2lstadd_last.c	/^void	ft_2lstadd_last(t_2list **alst, t_2list *new)$/;"	f
+ft_2lstdel	srcs/ft_2lstdel.c	/^void	ft_2lstdel(t_2list **alst, void (*del)(void *))$/;"	f
+ft_2lstdelnext	srcs/ft_2lstdelnext.c	/^void	ft_2lstdelnext(t_2list **alst, void (*del)(void *))$/;"	f
+ft_2lstdelone	srcs/ft_2lstdelone.c	/^void	ft_2lstdelone(t_2list **alst, void (*del)(void *))$/;"	f
+ft_2lstnew	srcs/ft_2lstnew.c	/^t_2list	*ft_2lstnew(void const *cntent, size_t cntent_size)$/;"	f
+ft_atoi	srcs/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
+ft_bzero	srcs/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
+ft_conv_address	srcs/address.c	/^int		ft_conv_address(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_char	srcs/char.c	/^int	ft_conv_char(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_double	srcs/float.c	/^int		ft_conv_double(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_float	srcs/float.c	/^int		ft_conv_float(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_hexa	srcs/hexa.c	/^int		ft_conv_hexa(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_hexa_upper	srcs/hexa_upper.c	/^int		ft_conv_hexa_upper(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_int	srcs/int.c	/^int		ft_conv_int(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_ldouble	srcs/float.c	/^int		ft_conv_ldouble(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_octal	srcs/octal.c	/^int		ft_conv_octal(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_percent	srcs/percent.c	/^int		ft_conv_percent(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_string	srcs/string.c	/^int			ft_conv_string(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_conv_unsigned	srcs/unsigned.c	/^int		ft_conv_unsigned(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
+ft_count_words	srcs/ft_strsplit.c	/^static int	ft_count_words(char const *s, char c)$/;"	f	file:
+ft_double_special	srcs/special.c	/^int		ft_double_special(t_conv_id *s_ptr, t_s_e_m *dble)$/;"	f
+ft_dprintf	srcs/ft_dprintf.c	/^int			ft_dprintf(int fd, const char *format, ...)$/;"	f
+ft_isalnum	srcs/ft_isalnum.c	/^uint8_t	ft_isalnum(const int c)$/;"	f
+ft_isalpha	srcs/ft_isalpha.c	/^uint8_t	ft_isalpha(const int c)$/;"	f
+ft_isascii	srcs/ft_isascii.c	/^uint8_t	ft_isascii(const int c)$/;"	f
+ft_isdigit	srcs/ft_isdigit.c	/^uint8_t	ft_isdigit(const int c)$/;"	f
+ft_isprint	srcs/ft_isprint.c	/^uint8_t	ft_isprint(const int c)$/;"	f
+ft_itoa	srcs/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f
+ft_itoa_base	srcs/ft_itoa_base.c	/^char	*ft_itoa_base(int value, int base)$/;"	f
+ft_longd_special	srcs/special.c	/^int		ft_longd_special(t_conv_id *s_ptr, t_s_e_m *dble)$/;"	f
+ft_lstadd	srcs/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f
+ft_lstdel	srcs/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))$/;"	f
+ft_lstdelone	srcs/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))$/;"	f
+ft_lstiter	srcs/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f
+ft_lstmap	srcs/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f
+ft_lstnew	srcs/ft_lstnew.c	/^t_list	*ft_lstnew(void const *content, size_t content_size)$/;"	f
+ft_memalloc	srcs/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/;"	f
+ft_memccpy	srcs/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
+ft_memchr	srcs/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
+ft_memcmp	srcs/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+ft_memcpy	srcs/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
+ft_memdel	srcs/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f
+ft_memjoin	srcs/ft_memjoin.c	/^void	*ft_memjoin(void *s1, size_t n1, void *s2, size_t n2)$/;"	f
+ft_memmove	srcs/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
+ft_memset	srcs/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
+ft_need_trim	srcs/ft_strtrim.c	/^static	int		ft_need_trim(char const *s, int len)$/;"	f	file:
+ft_printf	srcs/ft_printf.c	/^int			ft_printf(const char *format, ...)$/;"	f
+ft_putchar	srcs/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f
+ft_putchar_fd	srcs/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
+ft_putendl	srcs/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f
+ft_putendl_fd	srcs/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f
+ft_putnbr	srcs/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f
+ft_putnbr_fd	srcs/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
+ft_putstr	srcs/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f
+ft_putstr_fd	srcs/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f
+ft_strcat	srcs/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f
+ft_strchr	srcs/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
+ft_strclr	srcs/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f
+ft_strcmp	srcs/ft_strcmp.c	/^int	ft_strcmp(const char *s1, const char *s2)$/;"	f
+ft_strcpy	srcs/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/;"	f
+ft_strdel	srcs/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f
+ft_strdup	srcs/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
+ft_strequ	srcs/ft_strequ.c	/^int	ft_strequ(char const *s1, char const *s2)$/;"	f
+ft_striter	srcs/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f
+ft_striteri	srcs/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f
+ft_strjoin	srcs/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
+ft_strlcat	srcs/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size_t size)$/;"	f
+ft_strlen	srcs/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f
+ft_strmap	srcs/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f
+ft_strmapi	srcs/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
+ft_strncat	srcs/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t n)$/;"	f
+ft_strncmp	srcs/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+ft_strncpy	srcs/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_t len)$/;"	f
+ft_strnequ	srcs/ft_strnequ.c	/^int	ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f
+ft_strnew	srcs/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f
+ft_strnstr	srcs/ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f
+ft_strrchr	srcs/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
+ft_strsplit	srcs/ft_strsplit.c	/^char		**ft_strsplit(char const *s, char c)$/;"	f
+ft_strstr	srcs/ft_strstr.c	/^char	*ft_strstr(const char *haystack, const char *needle)$/;"	f
+ft_strsub	srcs/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
+ft_strtrim	srcs/ft_strtrim.c	/^char			*ft_strtrim(char const *s)$/;"	f
+ft_tolower	srcs/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
+ft_toupper	srcs/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
+ft_wordlen	srcs/ft_strsplit.c	/^static int	ft_wordlen(char const *s, char c)$/;"	f	file:
+ftoa_double	srcs/double.c	/^int		ftoa_double(t_s_e_m *dble, t_conv_id *s_ptr)$/;"	f
+ftoa_ldouble	srcs/ldouble.c	/^int		ftoa_ldouble(t_s_e_m *dble, t_conv_id *s_ptr)$/;"	f
+get_address_value	srcs/address_tools.c	/^void	get_address_value(unsigned long *val_ptr, va_list *arg_ptr)$/;"	f
+get_double_value	srcs/double_tools.c	/^void	get_double_value(va_list *arg_ptr, t_s_e_m *dble_ptr)$/;"	f
+get_func	srcs/func_selector.c	/^t_conv_func		get_func(char c)$/;"	f
+get_int_value	srcs/int_tools.c	/^void	get_int_value(long long int *val_ptr, va_list *arg_ptr,$/;"	f
+get_ldouble_value	srcs/ldouble_tools.c	/^void	get_ldouble_value(va_list *arg_ptr, t_s_e_m *dble_ptr)$/;"	f
+get_next_line	srcs/get_next_line.c	/^int		get_next_line(int fd, char **line)$/;"	f
+get_unsigned_value	srcs/unsigned_tools.c	/^void	get_unsigned_value(unsigned long long *val_ptr, va_list *arg_ptr,$/;"	f
+init	srcs/get_next_line.c	/^t_data	*init(int fd, t_list **alst)$/;"	f
+int_len	srcs/int_tools.c	/^int		int_len(long long int val)$/;"	f
+ldouble_exponant	srcs/ldouble_tools.c	/^void	ldouble_exponant(t_s_e_m *dble_ptr, t_ld_arrs *a_ptr)$/;"	f
+ldouble_mantissa	srcs/ldouble_tools.c	/^void	ldouble_mantissa(unsigned long long mant, t_ld_arrs *a_ptr)$/;"	f
+ldouble_rounding	srcs/ldouble_tools.c	/^void	ldouble_rounding(t_ld_arrs *a_ptr, t_conv_id *s_ptr)$/;"	f
+len_f	includes/arg.h	/^	int		len_f;$/;"	m	struct:s_double_arrs
+len_f	includes/arg.h	/^	int		len_f;$/;"	m	struct:s_long_double_arrs
+len_i	includes/arg.h	/^	int		len_i;$/;"	m	struct:s_double_arrs
+len_i	includes/arg.h	/^	int		len_i;$/;"	m	struct:s_long_double_arrs
+len_modif1	includes/arg.h	/^	char	len_modif1;$/;"	m	struct:s_conv_info
+len_modif2	includes/arg.h	/^	char	len_modif2;$/;"	m	struct:s_conv_info
+len_modifier	srcs/plenmodifier.c	/^int	len_modifier(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
+len_modifier_in_struct	srcs/plenmodifier.c	/^int	len_modifier_in_struct(char *ptr, int len, t_conv_id *struct_ptr)$/;"	f
+longd_special_value	srcs/special.c	/^int		longd_special_value(t_s_e_m *dble_ptr)$/;"	f
+loop	srcs/ft_dprintf.c	/^int			loop(int fd, const char *fmt, va_list *arg_ptr, int written)$/;"	f
+m	includes/arg.h	/^	unsigned long long	m;$/;"	m	struct:s_double
+minus_flag_address	srcs/address.c	/^void	minus_flag_address(t_conv_id *s_ptr, int len, unsigned long nb)$/;"	f
+minus_flag_double	srcs/double.c	/^void	minus_flag_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
+minus_flag_hexa	srcs/hexa.c	/^void	minus_flag_hexa(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+minus_flag_hexa_upper	srcs/hexa_upper.c	/^void	minus_flag_hexa_upper(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+minus_flag_ldouble	srcs/ldouble.c	/^void	minus_flag_ldouble(t_ld_arrs *a_ptr, t_conv_id *s_ptr,$/;"	f
+minus_flag_percent	srcs/percent.c	/^void	minus_flag_percent(t_conv_id *s_ptr, int len)$/;"	f
+minus_flag_unsigned	srcs/unsigned.c	/^void	minus_flag_unsigned(t_conv_id *s_ptr, int len,$/;"	f
+minus_int	srcs/int.c	/^void	minus_int(t_conv_id *s_ptr, int len, long long int nb)$/;"	f
+minus_octal	srcs/octal.c	/^void	minus_octal(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+minus_special_value	srcs/special_tools.c	/^void	minus_special_value(t_s_e_m *dble_ptr, t_conv_id *s_ptr)$/;"	f
+minus_string	srcs/string.c	/^void		minus_string(t_conv_id *s_ptr, int len, char *str)$/;"	f
+multiply_str_by_two	srcs/float_tools.c	/^void	multiply_str_by_two(char *str, int len)$/;"	f
+next	includes/libft.h	/^	struct s_double_linked_list	*next;$/;"	m	struct:s_double_linked_list	typeref:struct:s_double_linked_list::s_double_linked_list
+next	includes/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+no_flag_address	srcs/address.c	/^void	no_flag_address(t_conv_id *s_ptr, int len, unsigned long nb)$/;"	f
+no_flag_double	srcs/double.c	/^void	no_flag_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
+no_flag_hexa	srcs/hexa.c	/^void	no_flag_hexa(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+no_flag_hexa_upper	srcs/hexa_upper.c	/^void	no_flag_hexa_upper(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+no_flag_int	srcs/int.c	/^void	no_flag_int(t_conv_id *s_ptr, int len, long long int nb)$/;"	f
+no_flag_ldouble	srcs/ldouble.c	/^void	no_flag_ldouble(t_ld_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
+no_flag_octal	srcs/octal.c	/^void	no_flag_octal(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+no_flag_percent	srcs/percent.c	/^void	no_flag_percent(t_conv_id *s_ptr, int len)$/;"	f
+no_flag_string	srcs/string.c	/^void		no_flag_string(t_conv_id *s_ptr, int len, char *str)$/;"	f
+no_flag_unsigned	srcs/unsigned.c	/^void	no_flag_unsigned(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+null_ptr	srcs/address.c	/^int		null_ptr(t_conv_id *s_ptr, int len)$/;"	f
+null_ptr_zero	srcs/address.c	/^int		null_ptr_zero(t_conv_id *s_ptr, int len)$/;"	f
+null_string	srcs/string.c	/^int			null_string(t_conv_id *s_ptr)$/;"	f
+output	includes/arg.h	/^	char	*output;$/;"	m	struct:s_conv_info
+parsing	srcs/ft_dprintf.c	/^int			parsing(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
+precision	includes/arg.h	/^	int		precision;$/;"	m	struct:s_conv_info
+precision	srcs/pprecision.c	/^int		precision(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
+precision_in_struct	srcs/pprecision.c	/^void	precision_in_struct(char c, t_conv_id *struct_ptr)$/;"	f
+previous	includes/libft.h	/^	struct s_double_linked_list *previous;$/;"	m	struct:s_double_linked_list	typeref:struct:s_double_linked_list::s_double_linked_list
+read	includes/arg.h	/^	int	read;$/;"	m	struct:s_point
+read_until	srcs/get_next_line.c	/^int		read_until(t_data *current)$/;"	f
+s	includes/arg.h	/^	char				s;$/;"	m	struct:s_double
+s_conv_info	includes/arg.h	/^typedef struct	s_conv_info$/;"	s
+s_data	includes/get_next_line.h	/^typedef struct	s_data$/;"	s
+s_double	includes/arg.h	/^typedef struct	s_double$/;"	s
+s_double_arrs	includes/arg.h	/^typedef struct	s_double_arrs$/;"	s
+s_double_linked_list	includes/libft.h	/^typedef struct	s_double_linked_list$/;"	s
+s_list	includes/libft.h	/^typedef struct	s_list$/;"	s
+s_long_double_arrs	includes/arg.h	/^typedef struct	s_long_double_arrs$/;"	s
+s_point	includes/arg.h	/^typedef struct	s_point$/;"	s
+special_value	srcs/special_tools.c	/^void	special_value(t_s_e_m *dble_ptr, t_conv_id *s_ptr, int len)$/;"	f
+str	includes/arg.h	/^	char				*str;$/;"	m	struct:s_double
+str_fill_char	srcs/global_tools.c	/^int	str_fill_char(char *str, char c, int len)$/;"	f
+t_2list	includes/libft.h	/^}				t_2list;$/;"	t	typeref:struct:s_double_linked_list
+t_conv_func	includes/arg.h	/^typedef int		(*t_conv_func)(t_conv_id *struct_ptr, va_list *arg_ptr);$/;"	t
+t_conv_id	includes/arg.h	/^}				t_conv_id;$/;"	t	typeref:struct:s_conv_info
+t_d_arrs	includes/arg.h	/^}				t_d_arrs;$/;"	t	typeref:struct:s_double_arrs
+t_data	includes/get_next_line.h	/^}				t_data;$/;"	t	typeref:struct:s_data
+t_ld_arrs	includes/arg.h	/^}				t_ld_arrs;$/;"	t	typeref:struct:s_long_double_arrs
+t_list	includes/libft.h	/^}				t_list;$/;"	t	typeref:struct:s_list
+t_point	includes/arg.h	/^}				t_point;$/;"	t	typeref:struct:s_point
+t_s_e_m	includes/arg.h	/^}				t_s_e_m;$/;"	t	typeref:struct:s_double
+tab	includes/arg.h	/^	char	tab[1500];$/;"	m	struct:s_double_arrs
+tab	includes/arg.h	/^	char	tab[21500];$/;"	m	struct:s_long_double_arrs
+tmp	includes/arg.h	/^	char	tmp[1500];$/;"	m	struct:s_double_arrs
+tmp	includes/arg.h	/^	char	tmp[21500];$/;"	m	struct:s_long_double_arrs
+total	includes/arg.h	/^	char	*total;$/;"	m	struct:s_double_arrs
+total	includes/arg.h	/^	char	*total;$/;"	m	struct:s_long_double_arrs
+unsigned_len_base	srcs/global_tools.c	/^int	unsigned_len_base(unsigned long long val, unsigned base)$/;"	f
+width	includes/arg.h	/^	int		width;$/;"	m	struct:s_conv_info
+width	srcs/pwidth.c	/^int		width(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
+width_in_struct	srcs/pwidth.c	/^void	width_in_struct(char c, t_conv_id *struct_ptr)$/;"	f
+written	includes/arg.h	/^	int	written;$/;"	m	struct:s_point
+zero_flag_double	srcs/double.c	/^void	zero_flag_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
+zero_flag_hexa	srcs/hexa.c	/^void	zero_flag_hexa(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+zero_flag_hexa_upper	srcs/hexa_upper.c	/^void	zero_flag_hexa_upper(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+zero_flag_ldouble	srcs/ldouble.c	/^void	zero_flag_ldouble(t_ld_arrs *a_ptr, t_conv_id *s_ptr,$/;"	f
+zero_flag_unsigned	srcs/unsigned.c	/^void	zero_flag_unsigned(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+zero_no_prec_int	srcs/int.c	/^void	zero_no_prec_int(t_conv_id *s_ptr, int len, long long int nb)$/;"	f
+zero_no_prec_octal	srcs/octal.c	/^void	zero_no_prec_octal(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
+zero_zero_hexa	srcs/hexa.c	/^void	zero_zero_hexa(t_conv_id *s_ptr, int len)$/;"	f
+zero_zero_hexa_upper	srcs/hexa_upper.c	/^void	zero_zero_hexa_upper(t_conv_id *s_ptr, int len)$/;"	f
+zero_zero_int	srcs/int.c	/^void	zero_zero_int(t_conv_id *s_ptr, int len)$/;"	f
+zero_zero_octal	srcs/octal.c	/^void	zero_zero_octal(t_conv_id *s_ptr, int len)$/;"	f
+zero_zero_unsigned	srcs/unsigned.c	/^void	zero_zero_unsigned(t_conv_id *s_ptr, int len)$/;"	f

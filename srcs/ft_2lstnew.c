@@ -17,13 +17,15 @@ t_2list	*ft_2lstnew(void const *cntent, size_t cntent_size)
 {
 	t_2list	*new_2link;
 
-	if (!(new_2link = (t_2list *)malloc(sizeof(t_2list))))
+	new_2link = (t_2list *)malloc(sizeof(t_2list));
+	if (new_2link == NULL)
 		return (NULL);
-	if (!cntent)
+	if (cntent == NULL)
 		new_2link->cntent = NULL;
 	else
 	{
-		if (!(new_2link->cntent = (void *)malloc(sizeof(cntent))))
+		new_2link->cntent = (void *)malloc(sizeof(cntent));
+		if (new_2link->cntent == NULL)
 			return (NULL);
 		new_2link->cntent = ft_memmove(new_2link->cntent, cntent, cntent_size);
 	}

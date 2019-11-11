@@ -12,14 +12,9 @@
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+uint8_t	ft_isalpha(const int c)
 {
-	int	t;
-
-	t = 0;
 	if ((c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a'))
-		t = 1;
-	if (t != 0)
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }

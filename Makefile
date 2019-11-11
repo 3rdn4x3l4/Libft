@@ -12,6 +12,7 @@
 
 NAME= libft.a
 
+#Lib sources
 SRCS= ft_memset.c\
 	  ft_bzero.c\
 	  ft_memcpy.c\
@@ -78,9 +79,11 @@ SRCS= ft_memset.c\
 	  ft_2lstdelone.c\
 	  ft_2lstdelnext.c\
 	  ft_2lstnew.c\
-	  get_next_line.c\
-	  mem_next_line.c\
 
+#GNL sources
+SRCS += get_next_line.c\
+
+#Printf sources
 SRCS += ft_printf.c\
 	  ft_dprintf.c\
 	  pwidth.c\
@@ -124,21 +127,22 @@ OBJ= $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		@ar rcs $(NAME) $(OBJ)
-		@echo "libft builded"
+		ar rcs $(NAME) $(OBJ)
+		echo "lib builded"
 
 obj/%.o : srcs/%.c
-	@mkdir -p $(OBJDIR)
-	@gcc $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
+	mkdir -p $(OBJDIR)
+	gcc $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
 clean:
-		@rm -rf $(OBJDIR)
-		@echo "libft objects cleaned"
+		rm -rf $(OBJDIR)
+		echo "lib objects cleaned"
 
 fclean: clean
-		@rm -f $(NAME)
-		@echo "libft cleaned"
+		rm -f $(NAME)
+		echo "lib cleaned"
 
 re: fclean all
 
-.PHONY: clean all fclean re
+.PHONY: clean all fclean re 
+.SILENT: clean all fclean re $(OBJ) $(NAME)

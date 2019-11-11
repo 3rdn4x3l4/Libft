@@ -17,7 +17,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*new_link;
 
-	if (!(new_link = (t_list*)malloc(sizeof(t_list))))
+	new_link = (t_list*)malloc(sizeof(t_list));
+	if (new_link == NULL)
 		return (NULL);
 	if (!content)
 	{
@@ -26,7 +27,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (!((*new_link).content = (void*)malloc(content_size)))
+		(*new_link).content = (void*)malloc(content_size);
+		if ((*new_link).content == NULL)
 			return (NULL);
 		(*new_link).content = ft_memmove((*new_link).content, content,
 		content_size);

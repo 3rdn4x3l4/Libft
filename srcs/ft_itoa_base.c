@@ -25,7 +25,8 @@ char	*ft_itoa_base(int value, int base)
 	i = (sign == -1) ? 2 : 1;
 	while (1 <= (n /= base))
 		i++;
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	str = (char*)malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
 		return (NULL);
 	str[i] = '\0';
 	n = (value >= 0) ? value : -(long)value;

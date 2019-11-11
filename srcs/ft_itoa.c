@@ -15,8 +15,5 @@
 
 char		*ft_itoa(int n)
 {
-	char	*res;
-
-	res = ft_itoa_base(n, 10);
-	return (res);
+	return (ft_itoa_base(n , 10));
 }

@@ -6,13 +6,13 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 08:59:39 by alagache          #+#    #+#             */
-/*   Updated: 2019/11/04 16:33:20 by alagache         ###   ########.fr       */
+/*   Updated: 2019/05/08 12:59:31 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static	t_data	*init(int fd, t_list **alst)
+t_data	*init(int fd, t_list **alst)
 {
 	t_list	*node;
 	t_data	*current;
@@ -32,66 +32,65 @@ static	t_data	*init(int fd, t_list **alst)
 		return (NULL);
 	current = (t_data *)(node->content);
 	current->fd = fd;
-	current->read = NULL;
+	current->buffer = NULL;
 	ft_lstadd(alst, node);
 	return (current);
 }
 
-static	int		read_until(t_data *cur)
+int		read_until(t_data *current)
 {
-	char	buff[BUFF_SIZE];
+	char	buff[BUFF_SIZE + 1];
 	int		ret;
 	int		old_chars;
 	char	*tmp;
 
-	if (!(cur->read))
+	if (!(current->buffer))
 	{
-		if (!(cur->read = ft_strdup("")))
+		if (!(current->buffer = ft_strdup("\0")))
 			return (-1);
 	}
-	else if (ft_memchr(cur->read, '\n', ft_strlen(cur->read)) != NULL)
+	else if (ft_strchr(current->buffer, '\n') != NULL)
 		return (0);
 	ret = 0;
-	old_chars = ft_strlen(cur->read);
-	while ((ret = read(cur->fd, buff, BUFF_SIZE)) > 0)
+	old_chars = 0;
+	while ((ret = read(current->fd, buff, BUFF_SIZE)) > 0)
 	{
-		tmp = ft_memjoin(cur->read, ft_strlen(cur->read), buff, ret);
-		free(cur->read);
-		cur->read = tmp;
-		if (ft_memchr((cur->read) + old_chars, '\n', ft_strlen(cur->read)
-					- old_chars) != NULL)
+		buff[ret] = '\0';
+		tmp = ft_strjoin(current->buffer, buff);
+		free(current->buffer);
+		current->buffer = tmp;
+		if (ft_strchr((current->buffer) + old_chars, '\n') != NULL)
 			return (old_chars);
-		old_chars += ret;
+		old_chars += BUFF_SIZE;
 	}
 	return (ret);
 }
 
-static	char	*fill_line(t_data *current, char **line, int old_chars)
+char	*fill_line(t_data *current, char **line, int old_chars)
 {
 	char	*pos;
 	char	*tmp;
 	size_t	nl_len;
 
-	if ((pos = ft_memchr(current->read + old_chars, '\n',
-			ft_strlen(current->read) - old_chars)) != NULL)
+	if ((pos = ft_strchr(current->buffer + old_chars, '\n')) != NULL)
 	{
-		nl_len = pos - current->read;
-		if (!(*line = ft_strsub(current->read, 0, nl_len)))
+		nl_len = pos - current->buffer;
+		if (!(*line = ft_strsub(current->buffer, 0, nl_len)))
 			return (NULL);
 		if (!(tmp = ft_strdup(pos + 1)))
 			return (NULL);
-		free(current->read);
-		current->read = tmp;
+		free(current->buffer);
+		current->buffer = tmp;
 	}
 	else
 	{
-		*line = current->read;
-		current->read = NULL;
+		*line = current->buffer;
+		current->buffer = NULL;
 	}
 	return (*line);
 }
 
-static	void	free_exit(t_list **head, t_data *current)
+void	free_exit(t_list **head, t_data *current)
 {
 	t_list	*tmp;
 	t_list	*node;
@@ -110,7 +109,7 @@ static	void	free_exit(t_list **head, t_data *current)
 	free(node);
 }
 
-int				get_next_line(int fd, char **line)
+int		get_next_line(int fd, char **line)
 {
 	static	t_list	*head = NULL;
 	t_data			*current;
@@ -124,7 +123,7 @@ int				get_next_line(int fd, char **line)
 		return (-1);
 	if (!(fill_line(current, line, old_chars)))
 		return (-1);
-	if (current->read == NULL && **line == '\0')
+	if (current->buffer == NULL && **line == '\0')
 	{
 		free_exit(&head, current);
 		return (0);
