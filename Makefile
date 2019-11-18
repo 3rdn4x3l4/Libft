@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2019/11/04 16:30:01 by alagache         ###   ########.fr        #
+#    Updated: 2019/11/18 19:15:53 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,6 +118,8 @@ SRCS += ft_printf.c\
 
 CFLAGS= -Wall -Werror -Wextra
 
+CC= clang
+
 HEADERPATH= includes
 
 OBJDIR= obj
@@ -127,19 +129,19 @@ OBJ= $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		ar rcs $(NAME) $(OBJ)
+		$(AR) rcs $(NAME) $(OBJ)
 		echo "lib builded"
 
 obj/%.o : srcs/%.c
 	mkdir -p $(OBJDIR)
-	gcc $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
+	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
 clean:
-		rm -rf $(OBJDIR)
+		$(RM) -rf $(OBJDIR)
 		echo "lib objects cleaned"
 
 fclean: clean
-		rm -f $(NAME)
+		$(RM) -f $(NAME)
 		echo "lib cleaned"
 
 re: fclean all
