@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2019/11/18 19:15:53 by alagache         ###   ########.fr        #
+#    Updated: 2019/11/27 14:57:54 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRCS= ft_memset.c\
 	  ft_strnequ.c\
 	  ft_strsub.c\
 	  ft_strjoin.c\
+	  ft_strjoinfree.c\
 	  ft_strtrim.c\
 	  ft_strsplit.c\
 	  ft_itoa.c\
