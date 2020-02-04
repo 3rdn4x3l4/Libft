@@ -51,26 +51,26 @@ static int	ft_wordlen(char const *s, char c)
 
 char		**ft_strsplit(char const *s, char c)
 {
-	char	**w_tab;
+	char	**w_arr;
 	int		w_index;
 	int		l;
 	int		p;
 
 	p = 0;
 	w_index = -1;
-	if (!s || !(w_tab = (char**)malloc(sizeof(char *) *
+	if (!s || !(w_arr = (char**)malloc(sizeof(char *) *
 	(ft_count_words(s, c) + 1))))
 		return (NULL);
 	while (++w_index < ft_count_words(s, c))
 	{
 		l = 0;
-		if (!(w_tab[w_index] = ft_strnew(ft_wordlen(&s[p], c))))
-			w_tab[w_index] = NULL;
+		if (!(w_arr[w_index] = ft_strnew(ft_wordlen(&s[p], c))))
+			w_arr[w_index] = NULL;
 		while (s[p] == c)
 			p++;
 		while (s[p] != c && s[p] != '\0')
-			w_tab[w_index][l++] = s[p++];
+			w_arr[w_index][l++] = s[p++];
 	}
-	w_tab[w_index] = 0;
-	return (w_tab);
+	w_arr[w_index] = 0;
+	return (w_arr);
 }
