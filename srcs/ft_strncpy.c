@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 16:04:33 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:59:42 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:23:29 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** copy at most len char from srcto dst and fills dst with '\0' if the lenght
+** of src is less than len
+*/
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

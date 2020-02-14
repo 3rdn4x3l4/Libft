@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 18:03:52 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:59:52 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:28:30 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ static int	ft_wordlen(char const *s, char c)
 	}
 	return (len);
 }
+
+/*
+** takes a string and a char
+** make the string an array of strings cutting out char
+*/
 
 char		**ft_strsplit(char const *s, char c)
 {

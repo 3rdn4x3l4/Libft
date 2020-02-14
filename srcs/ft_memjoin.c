@@ -6,12 +6,18 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:21:23 by alagache          #+#    #+#             */
-/*   Updated: 2019/11/04 17:47:59 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:00:07 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+/*
+** takes two mz and their respective sizes
+** allocated a mz of the size of the sum of the sizes
+** and fills the new mz with mz1 followed by the mz2
+*/
 
 void	*ft_memjoin(void *s1, size_t n1, void *s2, size_t n2)
 {

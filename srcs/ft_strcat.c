@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 16:18:59 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 11:01:35 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 17:54:12 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes two strings
+** add s2 content to to s1 content
+*/
 
 char	*ft_strcat(char *s1, const char *s2)
 {

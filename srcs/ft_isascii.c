@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 15:13:03 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:57:36 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:38:36 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a char
+** return TRUE is the char is in the ASCIi table
+*/
 
 uint8_t	ft_isascii(const int c)
 {

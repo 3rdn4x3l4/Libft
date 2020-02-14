@@ -6,11 +6,17 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 15:58:53 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:59:10 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:06:13 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes two strings
+** copy src content into dst
+** assumes the lenght of dst >= to src
+*/
 
 char	*ft_strcpy(char *dst, const char *src)
 {

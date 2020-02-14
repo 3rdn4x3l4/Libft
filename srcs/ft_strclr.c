@@ -6,20 +6,21 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 17:04:38 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:59:05 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 17:58:44 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** takes a string
+** set every char inside the string to '\0'
+*/
+
 void	ft_strclr(char *s)
 {
-	int	i;
-
-	i = -1;
-	if (!(s == NULL))
+	if (s != NULL)
 	{
-		while (s[++i])
-			s[i] = '\0';
+		ft_memset(s, 0, ft_strlen(s));
 	}
 }

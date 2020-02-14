@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 15:36:55 by alagache          #+#    #+#             */
-/*   Updated: 2019/10/10 19:56:14 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:15:08 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a string
+** return the lenght of the string
+*/
 
 size_t	ft_strlen(const char *s)
 {

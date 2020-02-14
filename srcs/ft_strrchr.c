@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:31:19 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/27 19:51:17 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:26:56 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a string and a char
+** return a pointer to the last occurence of the char in the string or NULL
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {

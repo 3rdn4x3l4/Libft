@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:30:40 by alagache          #+#    #+#             */
-/*   Updated: 2019/07/24 11:45:03 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:08:31 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes two strings
+** check if the 2 strings are identical
+*/
 
 int	ft_strequ(char const *s1, char const *s2)
 {

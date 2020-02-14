@@ -6,12 +6,17 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 11:45:22 by alagache          #+#    #+#             */
-/*   Updated: 2019/10/24 16:52:26 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:11:50 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+
+/*
+** takes two ints
+** return string representation of the first int in the base of the second
+*/
 
 char	*ft_itoa_base(int value, int base)
 {

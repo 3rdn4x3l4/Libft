@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:29:58 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:57:24 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:05:17 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a string
+** return the number represented inside the string
+*/
 
 int	ft_atoi(const char *str)
 {

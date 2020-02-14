@@ -6,11 +6,18 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 18:09:03 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:58:08 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:55:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes two memory zone, a char and an size
+** copy the content of src to dst
+** stop the copy if the char was copied and return a pointer after it
+** otherwise return NULL
+*/
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

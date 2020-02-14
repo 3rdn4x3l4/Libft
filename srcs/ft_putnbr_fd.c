@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 15:17:24 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:58:51 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:09:22 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes an int and a file descriptor
+** write the int on the file descriptor
+*/
 
 void	ft_putnbr_fd(int n, int fd)
 {

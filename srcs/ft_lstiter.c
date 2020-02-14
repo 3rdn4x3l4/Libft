@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 14:26:22 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:57:55 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:45:22 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a pointer to the head and a pointer to function
+** appply the function to every element in the list
+*/
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {

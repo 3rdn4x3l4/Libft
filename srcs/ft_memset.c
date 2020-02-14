@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:39:45 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:58:36 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:04:34 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a mz, an int and a size
+** set size bytes of the mz as the value of the int
+*/
 
 void	*ft_memset(void *b, int c, size_t len)
 {

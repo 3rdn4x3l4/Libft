@@ -6,12 +6,19 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:30:58 by alagache          #+#    #+#             */
-/*   Updated: 2019/11/27 14:46:24 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:11:35 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+/*
+** takes two strings
+** allocate a string of the size of the sum of the two strings
+** and fill the newly allocted string with the first string followed by the
+** second
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

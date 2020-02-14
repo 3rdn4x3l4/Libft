@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:50:48 by alagache          #+#    #+#             */
-/*   Updated: 2019/11/18 19:15:17 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:05:53 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes a mz, a size
+** set size bytes of the mz with '\0'
+*/
 
 void	ft_bzero(void *s, size_t n)
 {

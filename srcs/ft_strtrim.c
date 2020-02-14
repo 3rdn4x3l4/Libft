@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:31:40 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/27 19:06:19 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:34:11 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ static	int		ft_need_trim(char const *s, int len)
 	else
 		return (1);
 }
+
+/*
+** takes a string
+** and trim the string of whitespace at the begining and the end
+** the new string is allocated and returned
+*/
 
 char			*ft_strtrim(char const *s)
 {

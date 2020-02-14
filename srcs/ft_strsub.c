@@ -6,12 +6,19 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:34:34 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:59:57 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:32:33 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+
+/*
+** takes a string, a uint, and a size_t
+** allocate a string of size len
+** and fills from s + start up to len
+** return a pointer to the substr
+*/
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {

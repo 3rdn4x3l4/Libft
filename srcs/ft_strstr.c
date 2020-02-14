@@ -6,11 +6,17 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:31:32 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/27 19:03:34 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:30:33 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takes two strings
+** return a pointer to the begining of the second string inside the first
+** or NULL
+*/
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {

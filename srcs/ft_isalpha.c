@@ -6,11 +6,16 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:25:17 by alagache          #+#    #+#             */
-/*   Updated: 2019/04/25 10:57:34 by alagache         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:37:04 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** takesa char
+** return TRUE if the char is a letter
+*/
 
 uint8_t	ft_isalpha(const int c)
 {
