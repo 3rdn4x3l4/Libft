@@ -23,7 +23,7 @@ void	*ft_memalloc(const size_t size)
 {
 	unsigned char	*mz;
 
-	if (!(mz = (unsigned char*)malloc(sizeof(int) * size)))
+	if (!(mz = (unsigned char*)malloc(sizeof(unsigned char) * size)))
 		return (NULL);
 	ft_memset(mz, 0, size);
 	return (mz);

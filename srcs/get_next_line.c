@@ -51,7 +51,6 @@ int		read_until(t_data *current)
 	}
 	else if (ft_strchr(current->buffer, '\n') != NULL)
 		return (0);
-	ret = 0;
 	old_chars = 0;
 	while ((ret = read(current->fd, buff, BUFF_SIZE)) > 0)
 	{

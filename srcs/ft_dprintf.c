@@ -19,7 +19,6 @@ int			parsing(char *ptr, int end, t_conv_id *struct_ptr)
 	int	ret;
 	int	pos;
 
-	pos = 0;
 	struct_ptr->conv = ptr[end];
 	if ((pos = flag(ptr, end, struct_ptr)) == -1)
 		return (-1);

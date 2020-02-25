@@ -21,8 +21,9 @@ void	ft_2lstadd_last(t_2list **alst, t_2list *new)
 {
 	t_2list	*tmp;
 
-	while ((*alst)->next != NULL)
-		tmp = (*alst)->next;
+	tmp = *alst;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
 	tmp->next = new;
 	new->previous = tmp;
 }

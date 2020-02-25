@@ -73,7 +73,7 @@ char		**ft_strsplit(char const *s, char c)
 			w_arr[w_index] = NULL;
 		while (s[p] == c)
 			p++;
-		while (s[p] != c && s[p] != '\0')
+		while (s[p] != c && s[p] != '\0' && w_arr[w_index] != NULL)
 			w_arr[w_index][l++] = s[p++];
 	}
 	w_arr[w_index] = 0;
