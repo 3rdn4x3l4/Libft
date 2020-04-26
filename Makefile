@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/04/26 09:55:37 by alagache         ###   ########.fr        #
+#    Updated: 2020/04/26 10:12:46 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIBSRCS = ft_memset.c\
 	  ft_bzero.c\
 
 #STR* sources
-LIBSCRS += ft_strlen.c\
+LIBSRCS += ft_strlen.c\
 	  ft_strdup.c\
 	  ft_strcpy.c\
 	  ft_strncpy.c\
