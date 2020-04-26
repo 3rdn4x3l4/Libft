@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/04/26 08:10:52 by alagache         ###   ########.fr        #
+#    Updated: 2020/04/26 09:15:02 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,14 +94,13 @@ SRCS += ft_2lstadd_first.c\
 	  ft_2lstnew.c\
 
 #GNL sources
-SRCS += get_next_line.c\
+GNLSRCS += get_next_line.c\
 
 #Printf sources
-SRCS += ft_printf.c\
+PRINTFSRCS += ft_printf.c\
 	  ft_dprintf.c\
 	  pwidth.c\
 	  pflags.c\
-	  pwidth.c\
 	  plenmodifier.c\
 	  pprecision.c\
 	  func_selector.c\
@@ -129,7 +128,7 @@ SRCS += ft_printf.c\
 	  special.c\
 	  special_tools.c\
 
-SRCDIR = srcs/
+SRCDIR = srcs
 
 VPATH = $(SRCDIR):$(SRCDIR)/lib:$(SRCDIR)/gnl:$(SRCDIR)/printf
 
@@ -138,6 +137,7 @@ HEADERPATH = includes
 LIBHEADER = $(HEADERPATH)/libft.h
 GNLHEADER = $(HEADERPATH)/get_next_line.h
 PRINTFHEADER = $(HEADERPATH)/arg.h $(HEADERPATH)/ft_printf.h
+HEADERS= $(LIBHEADER) $(GNLHEADER) $(PRINTFHEADER)
 
 CC= clang
 
@@ -148,6 +148,8 @@ HEADERPATH= includes
 OBJDIR= obj
 
 OBJ= $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
+GNLOBJ= $(addprefix $(OBJDIR)/,$(GNLSRCS:.c=.o))
+PRINTFOBJ= $(addprefix $(OBJDIR)/,$(PRINTFSRCS:.c=.o))
 
 BLUE = "\\033[36m"
 RED = "\\033[31m"
@@ -159,12 +161,22 @@ LNECLR = "\\33[2K\\r"
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(AR) rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(GNLOBJ) $(PRINTFOBJ)
+	$(AR) rcs $(NAME) $(OBJ) $(GNLOBJ) $(PRINTFOBJ)
 	printf "$(LNECLR)$(GREEN)make libft done$(WHITE)\n"
 
-obj/%.o : srcs/%.c
+$(OBJDIR):
 	mkdir -p $(OBJDIR)
+
+$(PRINTFOBJ): $(PRINTFSRCS) $(PRINTFHEADER) $(LIBHEADER) | $(OBJDIR)
+	printf "$(LNECLR)$(NAME): $<"
+	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
+
+$(GNLOBJ): $(GNLSRCS) $(GNLHEADER) $(LIBHEADER) | $(OBJDIR)
+	printf "$(LNECLR)$(NAME): $<"
+	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
+
+$(OBJDIR)/%.o: %.c $(LIBHEADER) | $(OBJDIR)
 	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
@@ -180,4 +192,4 @@ re: fclean all
 	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
-.SILENT: clean all fclean re $(OBJ) $(NAME)
+.SILENT: clean all fclean re $(OBJ) $(NAME) $(OBJDIR) $(GNLOBJ) $(PRINTFOBJ)
