@@ -6,15 +6,14 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/04/26 07:19:12 by alagache         ###   ########.fr        #
+#    Updated: 2020/04/26 08:10:52 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libft.a
 
-#Lib sources
-SRCS= ft_memset.c\
-	  ft_bzero.c\
+#MEM* sources
+SRCS = ft_memset.c\
 	  ft_memcpy.c\
 	  ft_memccpy.c\
 	  ft_memmove.c\
@@ -23,7 +22,10 @@ SRCS= ft_memset.c\
 	  ft_memalloc.c\
 	  ft_memjoin.c\
 	  ft_memdel.c\
-	  ft_strlen.c\
+	  ft_bzero.c\
+
+#STR* sources
+SCRS += ft_strlen.c\
 	  ft_strdup.c\
 	  ft_strcpy.c\
 	  ft_strncpy.c\
@@ -36,14 +38,6 @@ SRCS= ft_memset.c\
 	  ft_strnstr.c\
 	  ft_strcmp.c\
 	  ft_strncmp.c\
-	  ft_atoi.c\
-	  ft_isprint.c\
-	  ft_isascii.c\
-	  ft_isdigit.c\
-	  ft_isalpha.c\
-	  ft_isalnum.c\
-	  ft_tolower.c\
-	  ft_toupper.c\
 	  ft_strnew.c\
 	  ft_strdel.c\
 	  ft_strclr.c\
@@ -58,9 +52,23 @@ SRCS= ft_memset.c\
 	  ft_strjoinfree.c\
 	  ft_strtrim.c\
 	  ft_strsplit.c\
+
+#IS* sources
+SRCS += ft_isprint.c\
+	  ft_isascii.c\
+	  ft_isdigit.c\
+	  ft_isalpha.c\
+	  ft_isalnum.c\
+
+#TO* sources
+SRCS += ft_atoi.c\
 	  ft_itoa.c\
 	  ft_itoa_base.c\
-	  ft_putchar.c\
+	  ft_tolower.c\
+	  ft_toupper.c\
+
+#PUT* sources
+SRCS += ft_putchar.c\
 	  ft_putstr.c\
 	  ft_putendl.c\
 	  ft_putnbr.c\
@@ -68,13 +76,17 @@ SRCS= ft_memset.c\
 	  ft_putstr_fd.c\
 	  ft_putendl_fd.c\
 	  ft_putnbr_fd.c\
-	  ft_lstnew.c\
+#LST* sources
+
+SRCS += ft_lstnew.c\
 	  ft_lstdelone.c\
 	  ft_lstdel.c\
 	  ft_lstadd.c\
 	  ft_lstiter.c\
 	  ft_lstmap.c\
-	  ft_2lstadd_first.c\
+
+#2LST* sources
+SRCS += ft_2lstadd_first.c\
 	  ft_2lstadd_last.c\
 	  ft_2lstdel.c\
 	  ft_2lstdelone.c\
@@ -116,6 +128,16 @@ SRCS += ft_printf.c\
 	  address.c\
 	  special.c\
 	  special_tools.c\
+
+SRCDIR = srcs/
+
+VPATH = $(SRCDIR):$(SRCDIR)/lib:$(SRCDIR)/gnl:$(SRCDIR)/printf
+
+HEADERPATH = includes
+
+LIBHEADER = $(HEADERPATH)/libft.h
+GNLHEADER = $(HEADERPATH)/get_next_line.h
+PRINTFHEADER = $(HEADERPATH)/arg.h $(HEADERPATH)/ft_printf.h
 
 CC= clang
 
