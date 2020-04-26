@@ -6,14 +6,14 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/04/26 09:15:02 by alagache         ###   ########.fr        #
+#    Updated: 2020/04/26 09:55:37 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libft.a
 
 #MEM* sources
-SRCS = ft_memset.c\
+LIBSRCS = ft_memset.c\
 	  ft_memcpy.c\
 	  ft_memccpy.c\
 	  ft_memmove.c\
@@ -25,7 +25,7 @@ SRCS = ft_memset.c\
 	  ft_bzero.c\
 
 #STR* sources
-SCRS += ft_strlen.c\
+LIBSCRS += ft_strlen.c\
 	  ft_strdup.c\
 	  ft_strcpy.c\
 	  ft_strncpy.c\
@@ -54,21 +54,21 @@ SCRS += ft_strlen.c\
 	  ft_strsplit.c\
 
 #IS* sources
-SRCS += ft_isprint.c\
+LIBSRCS += ft_isprint.c\
 	  ft_isascii.c\
 	  ft_isdigit.c\
 	  ft_isalpha.c\
 	  ft_isalnum.c\
 
 #TO* sources
-SRCS += ft_atoi.c\
+LIBSRCS += ft_atoi.c\
 	  ft_itoa.c\
 	  ft_itoa_base.c\
 	  ft_tolower.c\
 	  ft_toupper.c\
 
 #PUT* sources
-SRCS += ft_putchar.c\
+LIBSRCS += ft_putchar.c\
 	  ft_putstr.c\
 	  ft_putendl.c\
 	  ft_putnbr.c\
@@ -78,7 +78,7 @@ SRCS += ft_putchar.c\
 	  ft_putnbr_fd.c\
 #LST* sources
 
-SRCS += ft_lstnew.c\
+LIBSRCS += ft_lstnew.c\
 	  ft_lstdelone.c\
 	  ft_lstdel.c\
 	  ft_lstadd.c\
@@ -86,7 +86,7 @@ SRCS += ft_lstnew.c\
 	  ft_lstmap.c\
 
 #2LST* sources
-SRCS += ft_2lstadd_first.c\
+LIBSRCS += ft_2lstadd_first.c\
 	  ft_2lstadd_last.c\
 	  ft_2lstdel.c\
 	  ft_2lstdelone.c\
@@ -147,9 +147,9 @@ HEADERPATH= includes
 
 OBJDIR= obj
 
-OBJ= $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
-GNLOBJ= $(addprefix $(OBJDIR)/,$(GNLSRCS:.c=.o))
-PRINTFOBJ= $(addprefix $(OBJDIR)/,$(PRINTFSRCS:.c=.o))
+LIBOBJ= $(addprefix $(OBJDIR)/lib/,$(LIBSRCS:.c=.o))
+GNLOBJ= $(addprefix $(OBJDIR)/gnl/,$(GNLSRCS:.c=.o))
+PRINTFOBJ= $(addprefix $(OBJDIR)/printf/,$(PRINTFSRCS:.c=.o))
 
 BLUE = "\\033[36m"
 RED = "\\033[31m"
@@ -161,22 +161,24 @@ LNECLR = "\\33[2K\\r"
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(GNLOBJ) $(PRINTFOBJ)
-	$(AR) rcs $(NAME) $(OBJ) $(GNLOBJ) $(PRINTFOBJ)
+$(NAME): $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
+	$(AR) rcs $(NAME) $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
 	printf "$(LNECLR)$(GREEN)make libft done$(WHITE)\n"
 
 $(OBJDIR):
-	mkdir -p $(OBJDIR)
+	mkdir -p $(OBJDIR)/lib
+	mkdir -p $(OBJDIR)/gnl
+	mkdir -p $(OBJDIR)/printf
 
-$(PRINTFOBJ): $(PRINTFSRCS) $(PRINTFHEADER) $(LIBHEADER) | $(OBJDIR)
+$(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEADER) $(LIBHEADER) | $(OBJDIR)
 	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
-$(GNLOBJ): $(GNLSRCS) $(GNLHEADER) $(LIBHEADER) | $(OBJDIR)
+$(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEADER) $(LIBHEADER) | $(OBJDIR)
 	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
-$(OBJDIR)/%.o: %.c $(LIBHEADER) | $(OBJDIR)
+$(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEADER) | $(OBJDIR)
 	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
@@ -192,4 +194,4 @@ re: fclean all
 	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
-.SILENT: clean all fclean re $(OBJ) $(NAME) $(OBJDIR) $(GNLOBJ) $(PRINTFOBJ)
+.SILENT: clean all fclean re $(LIBOBJ) $(NAME) $(OBJDIR) $(GNLOBJ) $(PRINTFOBJ)
