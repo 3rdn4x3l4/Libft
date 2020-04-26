@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2019/11/27 14:57:54 by alagache         ###   ########.fr        #
+#    Updated: 2020/04/26 07:19:12 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,9 +117,9 @@ SRCS += ft_printf.c\
 	  special.c\
 	  special_tools.c\
 
-CFLAGS= -Wall -Werror -Wextra
-
 CC= clang
+
+CFLAGS= -Wall -Werror -Wextra
 
 HEADERPATH= includes
 
@@ -127,25 +127,35 @@ OBJDIR= obj
 
 OBJ= $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 
+BLUE = "\\033[36m"
+RED = "\\033[31m"
+WHITE = "\\033[0m"
+GREEN = "\\033[32m"
+PURPLE = "\\033[35m"
+
+LNECLR = "\\33[2K\\r"
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(AR) rcs $(NAME) $(OBJ)
-		echo "lib builded"
+	$(AR) rcs $(NAME) $(OBJ)
+	printf "$(LNECLR)$(GREEN)make libft done$(WHITE)\n"
 
 obj/%.o : srcs/%.c
 	mkdir -p $(OBJDIR)
+	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
 clean:
-		$(RM) -rf $(OBJDIR)
-		echo "lib objects cleaned"
+	$(RM) -rf $(OBJDIR)
+	printf "$(PURPLE)clean libft done$(WHITE)\n"
 
 fclean: clean
-		$(RM) -f $(NAME)
-		echo "lib cleaned"
+	$(RM) -f $(NAME)
+	printf "$(RED)fclean libft done$(WHITE)\n"
 
 re: fclean all
+	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
 .SILENT: clean all fclean re $(OBJ) $(NAME)
