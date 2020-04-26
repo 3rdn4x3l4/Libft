@@ -6,15 +6,14 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/04/26 07:19:12 by alagache         ###   ########.fr        #
+#    Updated: 2020/04/26 10:12:46 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libft.a
 
-#Lib sources
-SRCS= ft_memset.c\
-	  ft_bzero.c\
+#MEM* sources
+LIBSRCS = ft_memset.c\
 	  ft_memcpy.c\
 	  ft_memccpy.c\
 	  ft_memmove.c\
@@ -23,7 +22,10 @@ SRCS= ft_memset.c\
 	  ft_memalloc.c\
 	  ft_memjoin.c\
 	  ft_memdel.c\
-	  ft_strlen.c\
+	  ft_bzero.c\
+
+#STR* sources
+LIBSRCS += ft_strlen.c\
 	  ft_strdup.c\
 	  ft_strcpy.c\
 	  ft_strncpy.c\
@@ -36,14 +38,6 @@ SRCS= ft_memset.c\
 	  ft_strnstr.c\
 	  ft_strcmp.c\
 	  ft_strncmp.c\
-	  ft_atoi.c\
-	  ft_isprint.c\
-	  ft_isascii.c\
-	  ft_isdigit.c\
-	  ft_isalpha.c\
-	  ft_isalnum.c\
-	  ft_tolower.c\
-	  ft_toupper.c\
 	  ft_strnew.c\
 	  ft_strdel.c\
 	  ft_strclr.c\
@@ -58,9 +52,23 @@ SRCS= ft_memset.c\
 	  ft_strjoinfree.c\
 	  ft_strtrim.c\
 	  ft_strsplit.c\
+
+#IS* sources
+LIBSRCS += ft_isprint.c\
+	  ft_isascii.c\
+	  ft_isdigit.c\
+	  ft_isalpha.c\
+	  ft_isalnum.c\
+
+#TO* sources
+LIBSRCS += ft_atoi.c\
 	  ft_itoa.c\
 	  ft_itoa_base.c\
-	  ft_putchar.c\
+	  ft_tolower.c\
+	  ft_toupper.c\
+
+#PUT* sources
+LIBSRCS += ft_putchar.c\
 	  ft_putstr.c\
 	  ft_putendl.c\
 	  ft_putnbr.c\
@@ -68,13 +76,17 @@ SRCS= ft_memset.c\
 	  ft_putstr_fd.c\
 	  ft_putendl_fd.c\
 	  ft_putnbr_fd.c\
-	  ft_lstnew.c\
+#LST* sources
+
+LIBSRCS += ft_lstnew.c\
 	  ft_lstdelone.c\
 	  ft_lstdel.c\
 	  ft_lstadd.c\
 	  ft_lstiter.c\
 	  ft_lstmap.c\
-	  ft_2lstadd_first.c\
+
+#2LST* sources
+LIBSRCS += ft_2lstadd_first.c\
 	  ft_2lstadd_last.c\
 	  ft_2lstdel.c\
 	  ft_2lstdelone.c\
@@ -82,14 +94,13 @@ SRCS= ft_memset.c\
 	  ft_2lstnew.c\
 
 #GNL sources
-SRCS += get_next_line.c\
+GNLSRCS += get_next_line.c\
 
 #Printf sources
-SRCS += ft_printf.c\
+PRINTFSRCS += ft_printf.c\
 	  ft_dprintf.c\
 	  pwidth.c\
 	  pflags.c\
-	  pwidth.c\
 	  plenmodifier.c\
 	  pprecision.c\
 	  func_selector.c\
@@ -117,6 +128,17 @@ SRCS += ft_printf.c\
 	  special.c\
 	  special_tools.c\
 
+SRCDIR = srcs
+
+VPATH = $(SRCDIR):$(SRCDIR)/lib:$(SRCDIR)/gnl:$(SRCDIR)/printf
+
+HEADERPATH = includes
+
+LIBHEADER = $(HEADERPATH)/libft.h
+GNLHEADER = $(HEADERPATH)/get_next_line.h
+PRINTFHEADER = $(HEADERPATH)/arg.h $(HEADERPATH)/ft_printf.h
+HEADERS= $(LIBHEADER) $(GNLHEADER) $(PRINTFHEADER)
+
 CC= clang
 
 CFLAGS= -Wall -Werror -Wextra
@@ -125,7 +147,9 @@ HEADERPATH= includes
 
 OBJDIR= obj
 
-OBJ= $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
+LIBOBJ= $(addprefix $(OBJDIR)/lib/,$(LIBSRCS:.c=.o))
+GNLOBJ= $(addprefix $(OBJDIR)/gnl/,$(GNLSRCS:.c=.o))
+PRINTFOBJ= $(addprefix $(OBJDIR)/printf/,$(PRINTFSRCS:.c=.o))
 
 BLUE = "\\033[36m"
 RED = "\\033[31m"
@@ -137,12 +161,24 @@ LNECLR = "\\33[2K\\r"
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(AR) rcs $(NAME) $(OBJ)
+$(NAME): $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
+	$(AR) rcs $(NAME) $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
 	printf "$(LNECLR)$(GREEN)make libft done$(WHITE)\n"
 
-obj/%.o : srcs/%.c
-	mkdir -p $(OBJDIR)
+$(OBJDIR):
+	mkdir -p $(OBJDIR)/lib
+	mkdir -p $(OBJDIR)/gnl
+	mkdir -p $(OBJDIR)/printf
+
+$(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEADER) $(LIBHEADER) | $(OBJDIR)
+	printf "$(LNECLR)$(NAME): $<"
+	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
+
+$(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEADER) $(LIBHEADER) | $(OBJDIR)
+	printf "$(LNECLR)$(NAME): $<"
+	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
+
+$(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEADER) | $(OBJDIR)
 	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
@@ -158,4 +194,4 @@ re: fclean all
 	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
-.SILENT: clean all fclean re $(OBJ) $(NAME)
+.SILENT: clean all fclean re $(LIBOBJ) $(NAME) $(OBJDIR) $(GNLOBJ) $(PRINTFOBJ)
