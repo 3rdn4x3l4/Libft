@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/04/26 10:12:46 by alagache         ###   ########.fr        #
+#    Updated: 2020/05/26 03:41:17 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ LIBSRCS = ft_memset.c\
 	  ft_memjoin.c\
 	  ft_memdel.c\
 	  ft_bzero.c\
+	  ft_free_arr.c\
 
 #STR* sources
 LIBSRCS += ft_strlen.c\
@@ -52,6 +53,7 @@ LIBSRCS += ft_strlen.c\
 	  ft_strjoinfree.c\
 	  ft_strtrim.c\
 	  ft_strsplit.c\
+	  ft_occurence_of.c\
 
 #IS* sources
 LIBSRCS += ft_isprint.c\
