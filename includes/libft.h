@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:30:54 by alagache          #+#    #+#             */
-/*   Updated: 2020/04/26 09:58:19 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/28 19:34:51 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memalloc(const size_t size);
 void			ft_memdel(void **ap);
+void			free_arr(void **arr);
 
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
@@ -72,6 +73,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strjoinfree(char *s1, char *s2, char code);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
+int				occurrence_of(char *str, char c);
 
 char			*ft_itoa(int n);
 char			*ft_itoa_base(int value, int base);
