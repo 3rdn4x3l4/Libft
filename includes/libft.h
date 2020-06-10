@@ -6,7 +6,7 @@
 /*   By: alagache <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:30:54 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/08 21:50:39 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/10 16:57:04 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int				occurrence_of(char *str, char c);
 char			*ft_itoa(int n);
 char			*ft_itoa_base(int value, int base);
 int				ft_atoi(const char *str);
+long long		ft_atol(const char *str);
 
 uint8_t			ft_isalpha(const int c);
 uint8_t			ft_isdigit(const int c);
