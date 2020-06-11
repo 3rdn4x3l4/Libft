@@ -6,7 +6,7 @@
 #    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/06/08 21:53:37 by alagache         ###   ########.fr        #
+#    Updated: 2020/06/11 16:41:04 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,7 @@ LIBSRCS += ft_atoi.c\
 	  ft_itoa_base.c\
 	  ft_tolower.c\
 	  ft_toupper.c\
+	  ft_atol.c\
 
 #PUT* sources
 LIBSRCS += ft_putchar.c\
