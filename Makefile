@@ -3,14 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alagache <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: alagache <alagache@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/06/11 16:41:04 by alagache         ###   ########.fr        #
+#    Updated: 2020/06/21 20:45:34 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC= clang
+
+CFLAGS= -Wall -Werror -Wextra
+#Only one line at a time
+#CFLAGS+= -g3 -fsanitize=address,undefined
+#CFLAGS+= -g3 -fsanitize=thread,undefined
+#CFLAGS+= -g3 -fsanitize=memory,undefined
+
 NAME= libft.a
+
+SRCDIR = srcs
 
 #MEM* sources
 LIBSRCS = ft_memset.c\
@@ -132,28 +142,17 @@ PRINTFSRCS += ft_printf.c\
 	  special.c\
 	  special_tools.c\
 
-SRCDIR = srcs
-
-VPATH = $(SRCDIR):$(SRCDIR)/lib:$(SRCDIR)/gnl:$(SRCDIR)/printf
-
-HEADERPATH = includes
-
-LIBHEADER = $(HEADERPATH)/libft.h
-GNLHEADER = $(HEADERPATH)/get_next_line.h
-PRINTFHEADER = $(HEADERPATH)/arg.h $(HEADERPATH)/ft_printf.h
-HEADERS= $(LIBHEADER) $(GNLHEADER) $(PRINTFHEADER)
-
-CC= clang
-
-CFLAGS= -Wall -Werror -Wextra
-
-HEADERPATH= includes
-
 OBJDIR= obj
 
 LIBOBJ= $(addprefix $(OBJDIR)/lib/,$(LIBSRCS:.c=.o))
 GNLOBJ= $(addprefix $(OBJDIR)/gnl/,$(GNLSRCS:.c=.o))
 PRINTFOBJ= $(addprefix $(OBJDIR)/printf/,$(PRINTFSRCS:.c=.o))
+
+HEADDIR = includes
+
+LIBHEAD = $(HEADDIR)/libft.h
+GNLHEAD = $(HEADDIR)/get_next_line.h
+PRINTFHEAD = $(HEADDIR)/arg.h $(HEADDIR)/ft_printf.h
 
 BLUE = "\\033[36m"
 RED = "\\033[31m"
@@ -166,7 +165,7 @@ LNECLR = "\\33[2K\\r"
 all: $(NAME)
 
 $(NAME): $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
-	$(AR) rcs $(NAME) $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
+	$(AR) rcs $(NAME) $^
 	printf "$(LNECLR)$(GREEN)make libft done$(WHITE)\n"
 
 $(OBJDIR):
@@ -174,27 +173,30 @@ $(OBJDIR):
 	mkdir -p $(OBJDIR)/gnl
 	mkdir -p $(OBJDIR)/printf
 
-$(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEADER) $(LIBHEADER) | $(OBJDIR)
+$(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEAD) $(LIBHEAD) | $(OBJDIR)
+	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(NAME): $<"
-	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
-$(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEADER) $(LIBHEADER) | $(OBJDIR)
+$(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEAD) $(LIBHEAD) | $(OBJDIR)
+	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(NAME): $<"
-	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
-$(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEADER) | $(OBJDIR)
+$(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEAD) | $(OBJDIR)
+	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(NAME): $<"
-	$(CC) $(CFLAGS) -I $(HEADERPATH) -o $@ -c $<
 
 clean:
 	$(RM) -rf $(OBJDIR)
 	printf "$(PURPLE)clean libft done$(WHITE)\n"
 
-fclean: clean
+fclean:
+	$(MAKE) clean
 	$(RM) -f $(NAME)
 	printf "$(RED)fclean libft done$(WHITE)\n"
 
-re: fclean all
+re:
+	$(MAKE) -s fclean
+	$(MAKE) -s all
 	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
