@@ -6,7 +6,7 @@
 #    By: alagache <alagache@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/06/21 20:45:34 by alagache         ###   ########.fr        #
+#    Updated: 2020/06/21 23:54:19 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,8 +90,8 @@ LIBSRCS += ft_putchar.c\
 	  ft_putstr_fd.c\
 	  ft_putendl_fd.c\
 	  ft_putnbr_fd.c\
-#LST* sources
 
+#LST* sources
 LIBSRCS += ft_lstnew.c\
 	  ft_lstdelone.c\
 	  ft_lstdel.c\
@@ -154,12 +154,13 @@ LIBHEAD = $(HEADDIR)/libft.h
 GNLHEAD = $(HEADDIR)/get_next_line.h
 PRINTFHEAD = $(HEADDIR)/arg.h $(HEADDIR)/ft_printf.h
 
+#Print colors/lneclr
 BLUE = "\\033[36m"
 RED = "\\033[31m"
 WHITE = "\\033[0m"
 GREEN = "\\033[32m"
+YELLOW = "\\033[33m"
 PURPLE = "\\033[35m"
-
 LNECLR = "\\33[2K\\r"
 
 all: $(NAME)
@@ -175,15 +176,15 @@ $(OBJDIR):
 
 $(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEAD) $(LIBHEAD) | $(OBJDIR)
 	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
-	printf "$(LNECLR)$(NAME): $<"
+	printf "$(LNECLR)$(YELLOW)$(NAME): $<$(WHITE)"
 
 $(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEAD) $(LIBHEAD) | $(OBJDIR)
 	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
-	printf "$(LNECLR)$(NAME): $<"
+	printf "$(LNECLR)$(YELLOW)$(NAME): $<"$(WHITE)
 
 $(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEAD) | $(OBJDIR)
 	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
-	printf "$(LNECLR)$(NAME): $<"
+	printf "$(LNECLR)$(YELLOW)$(NAME): $<"$(WHITE)
 
 clean:
 	$(RM) -rf $(OBJDIR)
