@@ -6,7 +6,7 @@
 #    By: alagache <alagache@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/06/21 23:54:19 by alagache         ###   ########.fr        #
+#    Updated: 2020/06/24 01:13:54 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -191,8 +191,7 @@ clean:
 	printf "$(PURPLE)clean libft done$(WHITE)\n"
 
 fclean:
-	$(MAKE) clean
-	$(RM) -f $(NAME)
+	$(RM) -rf $(OBJDIR) $(NAME)
 	printf "$(RED)fclean libft done$(WHITE)\n"
 
 re:
@@ -201,4 +200,4 @@ re:
 	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
-.SILENT: clean all fclean re $(LIBOBJ) $(NAME) $(OBJDIR) $(GNLOBJ) $(PRINTFOBJ)
+.SILENT:
