@@ -6,7 +6,7 @@
 #    By: alagache <alagache@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 13:09:47 by alagache          #+#    #+#              #
-#    Updated: 2020/06/24 01:13:54 by alagache         ###   ########.fr        #
+#    Updated: 2020/06/28 19:17:27 by alagache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -163,7 +163,7 @@ YELLOW = "\\033[33m"
 PURPLE = "\\033[35m"
 LNECLR = "\\33[2K\\r"
 
-all: $(NAME)
+all: $(OBJDIR) $(NAME)
 
 $(NAME): $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
 	$(AR) rcs $(NAME) $^
@@ -174,15 +174,15 @@ $(OBJDIR):
 	mkdir -p $(OBJDIR)/gnl
 	mkdir -p $(OBJDIR)/printf
 
-$(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEAD) $(LIBHEAD) | $(OBJDIR)
+$(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEAD) $(LIBHEAD)
 	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(YELLOW)$(NAME): $<$(WHITE)"
 
-$(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEAD) $(LIBHEAD) | $(OBJDIR)
+$(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEAD) $(LIBHEAD)
 	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(YELLOW)$(NAME): $<"$(WHITE)
 
-$(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEAD) | $(OBJDIR)
+$(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEAD)
 	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(YELLOW)$(NAME): $<"$(WHITE)
 
@@ -200,4 +200,4 @@ re:
 	printf "$(BLUE)re libft done$(WHITE)\n"
 
 .PHONY: clean all fclean re 
-.SILENT:
+.SILENT: clean fclean re $(OBJDIR) $(LIBOBJ) $(PRINTFOBJ) $(GNLOBJ) $(NAME)
