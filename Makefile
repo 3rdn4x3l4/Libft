@@ -14,9 +14,9 @@ CC= clang
 
 CFLAGS= -Wall -Werror -Wextra
 #Only one line at a time
-#CFLAGS+= -g3 -fsanitize=address,undefined
-#CFLAGS+= -g3 -fsanitize=thread,undefined
-#CFLAGS+= -g3 -fsanitize=memory,undefined
+# CFLAGS+= -g3 -fsanitize=address,leak,undefined -fno-omit-frame-pointer 
+# CFLAGS+= -g3 -fsanitize=thread,undefined
+# CFLAGS+= -g3 -fsanitize=memory,undefined
 
 NAME= libft.a
 
