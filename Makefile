@@ -167,6 +167,7 @@ all: $(OBJDIR) $(NAME)
 
 $(NAME): $(LIBOBJ) $(GNLOBJ) $(PRINTFOBJ)
 	$(AR) rcs $(NAME) $^
+	sed -e '1s/^/[\n/' -e '$$s/,$$/\n]/' $(OBJDIR)/*/*.json > compile_commands.json
 	printf "$(LNECLR)$(GREEN)make libft done$(WHITE)\n"
 
 $(OBJDIR):
@@ -175,15 +176,15 @@ $(OBJDIR):
 	mkdir -p $(OBJDIR)/printf
 
 $(OBJDIR)/printf/%.o: $(SRCDIR)/printf/%.c $(PRINTFHEAD) $(LIBHEAD)
-	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
+	$(CC) -MJ $@.json $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(YELLOW)$(NAME): $<$(WHITE)"
 
 $(OBJDIR)/gnl/%.o: $(SRCDIR)/gnl/%.c $(GNLHEAD) $(LIBHEAD)
-	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
+	$(CC) -MJ $@.json $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(YELLOW)$(NAME): $<"$(WHITE)
 
 $(OBJDIR)/lib/%.o: $(SRCDIR)/lib/%.c $(LIBHEAD)
-	$(CC) $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
+	$(CC) -MJ $@.json $(CFLAGS) -I $(HEADDIR) -o $@ -c $<
 	printf "$(LNECLR)$(YELLOW)$(NAME): $<"$(WHITE)
 
 clean:

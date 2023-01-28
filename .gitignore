@@ -1,1 +1,4 @@
-*.[oa]
+obj/
+libft.a
+compile_commands.json
+.cache/
